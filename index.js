@@ -5,6 +5,17 @@ const Discord = require('discord.js');
 const Client = require('./client/Client');
 const config = require('./config.json');
 const {Player} = require('discord-player');
+const express = require('express'); // Import the express library
+const app = express(); // Launch the express app
+const http = require('http'); // Import the http library
+const server = http.createServer(app); // Create the server
+
+/** Replying to request at '/' */
+app.get('/', (req, res) => {
+  res.send('tyler is gay for me); 
+});
+
+server.listen(3000, () => { }); // Opening the 3000 port
 
 const client = new Client();
 client.commands = new Discord.Collection();
